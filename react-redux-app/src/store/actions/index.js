@@ -13,7 +13,7 @@ export const loadGameDeals = (price) => (dispatch) => {
   });
 
   // API URL to get the data from
-  const apiURL = `https://www.cheapshark.com/api/1.0/deals?storeID=1&lowerPrice=${price.minPrice}&upperPrice=${price.maxPrice}`;
+  const apiURL = `https://www.cheapshark.com/api/1.0/deals?storeID=1&lowerPrice=${price.minPrice}&upperPrice=${price.maxPrice}&sortBy=${price.sortBy}&desc=${price.desc}`;
 
   // Get the data
   axios
@@ -23,7 +23,13 @@ export const loadGameDeals = (price) => (dispatch) => {
 
       dispatch({
         type: DATA_LOAD_SUCCESS,
-        payload: response.data,
+        payload: {
+          minPrice: price.minPrice,
+          maxPrice: price.maxPrice,
+          data: response.data,
+          sortBy: price.sortBy,
+          desc: price.desc,
+        },
       });
     })
     .catch((error) => {

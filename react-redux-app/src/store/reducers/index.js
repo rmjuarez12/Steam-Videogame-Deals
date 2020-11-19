@@ -7,6 +7,10 @@ const initialState = {
   isLoading: false,
   listActive: false,
   errors: "",
+  minPrice: 0,
+  maxPrice: 0,
+  sortBy: "Title",
+  desc: 1,
 };
 
 const dealsReducer = (state = initialState, { type, payload }) => {
@@ -19,11 +23,14 @@ const dealsReducer = (state = initialState, { type, payload }) => {
       };
 
     case DATA_LOAD_SUCCESS:
-      console.log("Data Success");
       return {
         ...state,
         isLoading: false,
-        deals: payload,
+        deals: payload.data,
+        minPrice: payload.minPrice,
+        maxPrice: payload.maxPrice,
+        sortBy: payload.sortBy,
+        desc: payload.desc,
       };
 
     case DATA_LOAD_ERROR:

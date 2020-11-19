@@ -17,6 +17,7 @@ function DealsForm(props) {
     minPrice: "",
     maxPrice: "",
     sortBy: "Title",
+    desc: 0,
   };
 
   // Setup sounds to play

@@ -166,6 +166,18 @@ header .inner-header .close-btn:hover {
 }
 
 .deals-list .heading-list div {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.deals-list .heading-list div img {
+  width: 20px;
+  margin-left: 10px;
+}
+
+.deals-list .heading-list div {
   background: #dff9fb;
 }
 
@@ -202,6 +214,14 @@ header .inner-header .close-btn:hover {
   background: #6ab04c;
   text-decoration: none;
   padding: 10px 20px;
+}
+
+.deals-list .query {
+  font-family: "Press Start 2P", cursive;
+  color: #dff9fb;
+  text-align: center;
+  line-height: 25px;
+  margin-bottom: 20px;
 }
 
 /* Search Form */
