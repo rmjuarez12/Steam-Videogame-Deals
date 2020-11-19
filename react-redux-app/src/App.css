@@ -1,3 +1,7 @@
+/* Imoprt fonts */
+
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Righteous&display=swap");
+
 /* General */
 
 a,
@@ -30,15 +34,71 @@ header {
   background: rgba(19, 15, 64, 0.9);
   z-index: 100;
   width: 100%;
+  position: fixed;
+  top: 0;
 }
 
 header .inner-header {
   display: flex;
   padding: 10px 20px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 header .logo {
-  max-width: 200px;
+  max-width: 400px;
+}
+
+.header-form {
+  height: 0;
+  overflow: hidden;
+}
+
+header .inner-header form {
+  display: flex;
+  align-items: center;
+}
+
+header .inner-header form input,
+header .inner-header form select {
+  font-size: 14px;
+}
+
+header .inner-header form input {
+  width: 150px;
+}
+
+header .inner-header form button {
+  font-family: "Press Start 2P", cursive;
+  background: none;
+  border: none;
+  font-size: 13pt;
+  cursor: pointer;
+  color: #dff9fb;
+  padding: 5px 15px;
+}
+
+header .inner-header form button:hover {
+  background: #dff9fb;
+  color: #130f40;
+}
+
+header .inner-header .close-btn {
+  font-family: "Press Start 2P", cursive;
+  background: #dff9fb;
+  border: none;
+  font-size: 13pt;
+  cursor: pointer;
+  color: #130f40;
+  padding: 5px 15px;
+  transition: 0.3s all;
+  margin-right: 15px;
+}
+
+header .inner-header .close-btn:hover {
+  background: #130f40;
+  color: #dff9fb;
 }
 
 /* Slider */
@@ -50,7 +110,7 @@ header .logo {
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
+  overflow-x: hidden;
   position: fixed;
   top: 0;
   z-index: 10;
@@ -59,6 +119,76 @@ header .logo {
   background-size: cover;
   background-position: center;
 }
-.slider .bgSlide img {
+
+.slider h3 {
+  color: white;
+  font-family: "Righteous", cursive;
+  font-size: 45pt;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+/* Deals List */
+
+.deals-list {
+  z-index: 20;
+  background: rgba(19, 15, 64, 0.9);
   width: 100%;
+  min-height: 100vh;
+  display: none;
+  opacity: 0;
+  transform: translateY(100vh);
+  padding-top: 150px;
+}
+
+.deal-box {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  background: #eb4d4b;
+  padding: 20px;
+  align-items: center;
+}
+
+/* Search Form */
+
+.slider form {
+  text-align: center;
+}
+
+input[type="number"],
+select {
+  background: #dff9fb;
+  border: none;
+  padding: 10px 20px;
+  color: #130f40;
+  font-size: 20pt;
+  border-radius: 10px;
+  font-family: "Press Start 2P", cursive;
+}
+
+input[type="number"]::placeholder {
+  color: rgba(19, 15, 64, 0.5);
+  font-size: 12px;
+}
+
+input[type="number"] {
+  width: 200px;
+  margin-right: 10px;
+}
+
+.slider form button {
+  font-family: "Press Start 2P", cursive;
+  margin-top: 15px;
+  background: none;
+  border: none;
+  font-size: 20pt;
+  cursor: pointer;
+  color: #dff9fb;
+  padding: 5px 15px;
+}
+
+.slider form button:hover {
+  background: #dff9fb;
+  color: #130f40;
 }

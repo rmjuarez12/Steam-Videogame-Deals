@@ -11,18 +11,21 @@ import DealsForm from "../components/DealsForm";
 export default function Slider() {
   // Apply effects upon rendering
   useEffect(() => {
-    gsap.from(".slider", {
-      opacity: 0,
-      scale: 1.5,
-      duration: 2,
-    });
+    const sliderTL = gsap.timeline();
+    sliderTL.from(".slider", { opacity: 0, scale: 1.2, duration: 2 });
+    sliderTL.from(".slider h3", { opacity: 0, scale: 1.2, duration: 1 });
+    sliderTL.from(
+      ".slider .deals-form",
+      { opacity: 0, y: 100, duration: 1 },
+      2.5
+    );
   }, []);
 
   return (
     <div className='slider' style={{ backgroundImage: `url(${bgSlide})` }}>
       <h3>Search for best video game deals</h3>
 
-      <DealsForm />
+      <DealsForm buttonTxt='- Press Start -' />
     </div>
   );
 }

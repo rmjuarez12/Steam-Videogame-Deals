@@ -4,6 +4,9 @@ import React from "react";
 // Import Assets
 import logo from "../assets/vg-logo.png";
 
+// Import Components
+import DealsForm from "./DealsForm";
+
 export default function Header() {
   return (
     <header>
@@ -12,8 +15,8 @@ export default function Header() {
           <img src={logo} alt='Video Games Deals' />
         </div>
 
-        <div className='header-title'>
-          <h1>Search for best video game deals</h1>
+        <div className='header-form'>
+          <DealsForm buttonTxt='- Search -' />
         </div>
       </div>
     </header>

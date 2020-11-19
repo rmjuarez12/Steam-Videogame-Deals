@@ -6,7 +6,7 @@ export const IS_LOADING = "IS_LOADING";
 export const DATA_LOAD_SUCCESS = "DATA_LOAD_SUCCESS";
 export const DATA_LOAD_ERROR = "DATA_LOAD_ERROR";
 
-export const loadDataForLocation = (price) => (dispatch) => {
+export const loadGameDeals = (price) => (dispatch) => {
   // Dispatch an action to bring in the loading text
   dispatch({
     type: IS_LOADING,
