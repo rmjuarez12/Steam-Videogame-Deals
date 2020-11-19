@@ -7,13 +7,12 @@ export default function DealBox(props) {
   const getSteamRatingColor = () => {
     let ratingColor;
 
-    if (
-      deal.steamRatingText === "Very Positive" ||
-      deal.steamRatingText === "Mostly Positive"
-    ) {
-      ratingColor = "green";
+    if (deal.steamRatingPercent >= 70) {
+      ratingColor = "#6ab04c";
+    } else if (deal.steamRatingPercent >= 40 && deal.steamRatingPercent <= 70) {
+      ratingColor = "#f0932b";
     } else {
-      ratingColor = "red";
+      ratingColor = "#eb4d4b";
     }
 
     return ratingColor;
@@ -21,27 +20,32 @@ export default function DealBox(props) {
 
   return (
     <div className='deal-box'>
-      <img src={deal.thumb} alt={deal.internalName} className='thumbnail' />
+      <div className='savings-percent'>{Math.floor(deal.savings)}%</div>
 
-      <h3 className='title'>{deal.title}</h3>
-
-      <p className='price'>
+      <div className='price'>
         <span>${deal.normalPrice}</span> ${deal.salePrice}
-      </p>
+      </div>
 
-      <p className='rating' style={{ color: getSteamRatingColor() }}>
-        {deal.steamRatingText}
-      </p>
+      <div className='title'>
+        <img src={deal.thumb} alt={deal.internalName} />
+        <h3>{deal.title}</h3>
+      </div>
 
-      <p className='redirect-link'>
+      <div className='release-date'>{deal.releaseDate}</div>
+
+      <div className='rating' style={{ color: getSteamRatingColor() }}>
+        {deal.steamRatingText === null ? "n/a" : deal.steamRatingText}
+      </div>
+
+      <div className='redirect-link'>
         <a
           href={`https://www.cheapshark.com/redirect?dealID=${deal.dealID}`}
           target='_blank'
           rel='noreferrer'
         >
-          Deal Link
+          Buy Game
         </a>
-      </p>
+      </div>
     </div>
   );
 }

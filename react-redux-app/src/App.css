@@ -1,6 +1,6 @@
 /* Imoprt fonts */
 
-@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Righteous&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&family=Press+Start+2P&family=Righteous&display=swap");
 
 /* General */
 
@@ -21,6 +21,7 @@ img {
 
 body {
   background-color: black;
+  font-family: "Oxygen", sans-serif;
 }
 
 .App {
@@ -145,15 +146,72 @@ header .inner-header .close-btn:hover {
   display: flex;
   justify-content: space-between;
   margin-bottom: 20px;
-  background: #eb4d4b;
-  padding: 20px;
+  padding: 20px 0;
   align-items: center;
+  color: #dff9fb;
+  border-bottom: 1px solid #dff9fb;
+}
+
+.deals-list .heading-list {
+  display: flex;
+  justify-content: space-between;
+}
+
+.deals-list .heading-list div,
+.deal-box div {
+  width: 14%;
+  padding: 10px;
+  text-align: center;
+  font-weight: 700;
+}
+
+.deals-list .heading-list div {
+  background: #dff9fb;
+}
+
+.deals-list .heading-list .savings-percent,
+.deals-list .heading-list .price,
+.deal-box .price,
+.deal-box .savings-percent {
+  width: 10%;
+}
+
+.deals-list .heading-list .title,
+.deal-box .title {
+  width: 32%;
+}
+
+.deal-box .title {
+  display: flex;
+  align-items: center;
+  text-align: left;
+}
+
+.deal-box .title img {
+  margin-right: 10px;
+}
+
+.deal-box .price span {
+  display: block;
+  text-decoration: line-through;
+  color: #535c68;
+}
+
+.deal-box a {
+  color: white;
+  background: #6ab04c;
+  text-decoration: none;
+  padding: 10px 20px;
 }
 
 /* Search Form */
 
 .slider form {
   text-align: center;
+}
+
+.slider .close-btn {
+  display: none;
 }
 
 input[type="number"],
@@ -191,4 +249,10 @@ input[type="number"] {
 .slider form button:hover {
   background: #dff9fb;
   color: #130f40;
+}
+
+form button:disabled {
+  opacity: 0.3 !important;
+  color: white !important;
+  background: none !important;
 }
