@@ -10,6 +10,7 @@ function DealsForm(props) {
   const initalState = {
     minPrice: "",
     maxPrice: "",
+    sortBy: "Title",
   };
 
   // Set the states for Min/Max Price
@@ -45,6 +46,13 @@ function DealsForm(props) {
           onChange={handleChange}
           value={getDeal.maxPrice}
         />
+
+        <select name='sortBy' onChange={handleChange} value={getDeal.sortBy}>
+          <option value='Title'>Title</option>
+          <option value='Price'>Price</option>
+          <option value='Release'>Released Date</option>
+          <option value='Deal Rating'>Best Deals</option>
+        </select>
         <button>Submit</button>
       </form>
     </div>
