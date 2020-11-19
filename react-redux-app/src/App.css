@@ -15,18 +15,30 @@ img {
   margin: 0 auto;
 }
 
+body {
+  background-color: black;
+}
+
+.App {
+  display: flex;
+  justify-content: center;
+}
+
 /* Header */
 
 header {
-  background: #130f40;
+  background: rgba(19, 15, 64, 0.9);
+  z-index: 100;
+  width: 100%;
 }
 
 header .inner-header {
   display: flex;
+  padding: 10px 20px;
 }
 
 header .logo {
-  max-width: 400px;
+  max-width: 200px;
 }
 
 /* Slider */
@@ -38,7 +50,15 @@ header .logo {
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  z-index: 10;
+  flex-direction: column;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
 }
-
-.slider .bgSlide {
+.slider .bgSlide img {
+  width: 100%;
 }

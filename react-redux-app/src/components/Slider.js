@@ -1,17 +1,28 @@
 // Import Dependencies
-import React from "react";
+import React, { useEffect } from "react";
+import { gsap } from "gsap";
 
 // Import Assets
 import bgSlide from "../assets/Nice-Battlefield-4.jpg";
 
-export default function Slider() {
-  return (
-    <div className='slider'>
-      <div className='bgSlide'>
-        <img src={bgSlide} alt='' />
-      </div>
+// Import Components
+import DealsForm from "../components/DealsForm";
 
+export default function Slider() {
+  // Apply effects upon rendering
+  useEffect(() => {
+    gsap.from(".slider", {
+      opacity: 0,
+      scale: 1.5,
+      duration: 2,
+    });
+  }, []);
+
+  return (
+    <div className='slider' style={{ backgroundImage: `url(${bgSlide})` }}>
       <h3>Search for best video game deals</h3>
+
+      <DealsForm />
     </div>
   );
 }
