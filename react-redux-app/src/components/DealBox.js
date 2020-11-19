@@ -1,5 +1,4 @@
 import React from "react";
-import { format, formatISO9075 } from "date-fns";
 
 export default function DealBox(props) {
   const deal = props.deal;
