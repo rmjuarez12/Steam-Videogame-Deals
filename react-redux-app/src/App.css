@@ -224,6 +224,14 @@ header .inner-header .close-btn:hover {
   margin-bottom: 20px;
 }
 
+.deals-list .sort-form {
+  margin-top: 5px;
+}
+
+.deals-list .sort-form select {
+  font-size: 14px;
+}
+
 /* Search Form */
 
 .slider form {

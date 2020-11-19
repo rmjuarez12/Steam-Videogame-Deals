@@ -14,27 +14,6 @@ import downArrow from "../assets/down-arrow.png";
 import { loadGameDeals } from "../store/actions/index";
 
 function DealList(props) {
-  // Function to change sorting and Desc order
-  const sortItems = (type) => {
-    let desc;
-
-    if (type === props.sortBy) {
-      desc = props.desc ? 0 : 1;
-    } else {
-      console.log("Apply Ascending Order");
-      desc = 0;
-    }
-
-    const queryParams = {
-      minPrice: props.minPrice,
-      maxPrice: props.maxPrice,
-      sortBy: type,
-      desc: desc,
-    };
-
-    props.loadGameDeals(queryParams);
-  };
-
   // Component for the heading display
   const currentOrder = props.desc;
   const orderBy = props.sortBy;
@@ -57,27 +36,57 @@ function DealList(props) {
     );
   };
 
+  // Function to change sorting and Desc order
+  const sortItems = (type) => {
+    let desc;
+
+    if (type === props.sortBy) {
+      desc = props.desc ? 0 : 1;
+    } else {
+      console.log("Apply Ascending Order");
+      desc = 0;
+    }
+
+    const queryParams = {
+      minPrice: props.minPrice,
+      maxPrice: props.maxPrice,
+      sortBy: type,
+      desc: desc,
+    };
+
+    props.loadGameDeals(queryParams);
+  };
+
+  const sortByForm = (e) => {
+    sortItems(e.target.value);
+  };
+
   return (
     <div className='deals-list'>
       <div className='container'>
         <div className='query'>
           Searching Price Range ${props.minPrice} - ${props.maxPrice}
-          <br />
-          Sorted By: {props.sortBy}
+          <div class='sort-form'>
+            <label htmlFor='sortBy'>
+              Sort By:
+              <select id='sortBy' value={props.sortBy} onChange={sortByForm}>
+                <option value='Price'>Price</option>
+                <option value='Title'>Title</option>
+                <option value='Reviews'>Reviews</option>
+                <option value='Savings'>Savings</option>
+              </select>
+            </label>
+          </div>
         </div>
 
         <div className='heading-list'>
-          <ListHeading
-            title='Savings'
-            class='savings-percent'
-            desc={props.desc}
-          />
-          <ListHeading title='Price' class='price' desc={props.desc} />
-          <ListHeading title='Title' class='title' desc={props.desc} />
+          <ListHeading title='Savings' class='savings-percent' />
+          <ListHeading title='Price' class='price' />
+          <ListHeading title='Title' class='title' />
 
           <div className='release-date'>Released</div>
 
-          <ListHeading title='Reviews' class='rating' desc={props.desc} />
+          <ListHeading title='Reviews' class='rating' />
 
           <div className='redirect-link'></div>
         </div>
