@@ -66,7 +66,7 @@ function DealList(props) {
       <div className='container'>
         <div className='query'>
           Searching Price Range ${props.minPrice} - ${props.maxPrice}
-          <div class='sort-form'>
+          <div className='sort-form'>
             <label htmlFor='sortBy'>
               Sort By:
               <select id='sortBy' value={props.sortBy} onChange={sortByForm}>

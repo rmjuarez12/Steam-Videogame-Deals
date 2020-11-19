@@ -10,7 +10,7 @@ const initialState = {
   minPrice: 0,
   maxPrice: 0,
   sortBy: "Title",
-  desc: 1,
+  desc: 0,
 };
 
 const dealsReducer = (state = initialState, { type, payload }) => {

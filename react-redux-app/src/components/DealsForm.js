@@ -16,7 +16,7 @@ function DealsForm(props) {
   const initalState = {
     minPrice: "",
     maxPrice: "",
-    sortBy: "Title",
+    sortBy: props.sortBy,
     desc: 0,
   };
 
@@ -32,7 +32,12 @@ function DealsForm(props) {
 
   // Handle input change
   const handleChange = (e) => {
-    setGetDeal({ ...getDeal, [e.target.name]: e.target.value });
+    setGetDeal({
+      ...getDeal,
+      [e.target.name]: e.target.value,
+      sortBy: props.sortBy,
+      desc: props.desc,
+    });
   };
 
   // Function to close list
@@ -61,6 +66,7 @@ function DealsForm(props) {
     setDisableBtn(true);
 
     props.loadGameDeals(getDeal);
+
     gsap.to(".slider h3", { opacity: 0, scale: 1.2, duration: 2 });
 
     gsap.to(".slider .deals-form", { opacity: 0, y: 100, duration: 2 });
@@ -117,4 +123,11 @@ function DealsForm(props) {
   );
 }
 
-export default connect("", { loadGameDeals })(DealsForm);
+const mapStateToProps = (state) => {
+  return {
+    sortBy: state.sortBy,
+    desc: state.desc,
+  };
+};
+
+export default connect(mapStateToProps, { loadGameDeals })(DealsForm);
