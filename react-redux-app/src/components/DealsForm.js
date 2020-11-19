@@ -81,6 +81,8 @@ function DealsForm(props) {
     setTimeout(() => {
       setDisableBtn(false);
     }, 1000);
+
+    setGetDeal(initalState);
   };
 
   return (

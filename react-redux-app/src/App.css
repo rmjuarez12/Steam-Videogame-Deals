@@ -256,3 +256,71 @@ form button:disabled {
   color: white !important;
   background: none !important;
 }
+
+@media (max-width: 700px) {
+  .App {
+    flex-direction: column;
+  }
+
+  header {
+    position: static !important;
+  }
+
+  .slider h3 {
+    font-size: 25pt;
+  }
+
+  .slider form input {
+    display: block;
+    width: 100%;
+    margin-bottom: 15px;
+  }
+
+  .slider {
+    padding: 0 20px;
+  }
+
+  .slider form button {
+    font-size: 14pt;
+  }
+
+  .deals-list {
+    padding-top: 40px;
+  }
+
+  .header-form form {
+    display: block !important;
+    text-align: center;
+  }
+
+  .header-form .close-btn {
+    margin-bottom: 15px;
+    text-align: center;
+  }
+
+  .header-form input {
+    display: block;
+    width: 100% !important;
+    margin-bottom: 15px;
+  }
+
+  .deals-list .savings-percent,
+  .deals-list .rating,
+  .deals-list .heading-list {
+    display: none;
+  }
+
+  .deals-list .deal-box {
+    display: block;
+    text-align: center;
+  }
+
+  .deals-list .deal-box div {
+    width: 100%;
+    text-align: center;
+  }
+
+  .deals-list .deal-box .title {
+    display: block;
+  }
+}
