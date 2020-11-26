@@ -1,4 +1,5 @@
 import React from "react";
+import { format } from "date-fns";
 
 export default function DealBox(props) {
   const deal = props.deal;
@@ -18,6 +19,8 @@ export default function DealBox(props) {
     return ratingColor;
   };
 
+  const releasedDate = deal.releaseDate * 1000;
+
   return (
     <div className='deal-box'>
       <div className='savings-percent'>{Math.floor(deal.savings)}%</div>
@@ -31,7 +34,7 @@ export default function DealBox(props) {
         <h3>{deal.title}</h3>
       </div>
 
-      <div className='release-date'>{deal.releaseDate}</div>
+      <div className='release-date'>{format(releasedDate, "MM/dd/yyyy")}</div>
 
       <div className='rating' style={{ color: getSteamRatingColor() }}>
         {deal.steamRatingText === null ? "n/a" : deal.steamRatingText}
